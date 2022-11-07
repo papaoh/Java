@@ -6,42 +6,42 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class PrintWriterDemo {
-	/* ÆÄÀÏÀ» ¸¸µå´Â ÇÁ·Î±×·¥
+	/* íŒŒì¼ì„ ë§Œë“œëŠ” í”„ë¡œê·¸ë¨
 	   Scanner(), System.read()  -->
-	   FileReaderº¸´Ù ÅØ½ºÆ® ÆÄÀÏÀÇ ÀÔ·Â¿¡¼­´Â nextLine ¶Ç´Â nextInt µî ¸Ş¼­µåÀÇ »ç¿ëÀÌ ¿ëÀÌÇÏ´Ù.
-	   Scanner Å¬·¡½º¸¦ ÀÌ¿ëÇÏ¿© File °´Ã¼¸¦ »ç¿ëÇÏ¸é
-	   Scanner fileInput = new Scanner(new File("input.txt"));
-	      À§ ÄÚµå Ã³·³ Æí¸®ÇÏ°Ô ÄÚµå¸¦ ÀÛ¼ºÇÒ ¼ö ÀÖ´Ù. 
-	   But ¿¹¿ÜÃ³¸®¹® ÇÊ¿ä (FileNotFoundException Ã³¸®ÇÊ¿ä)
+	   FileReaderë³´ë‹¤ í…ìŠ¤íŠ¸ íŒŒì¼ì˜ ì…ë ¥ì—ì„œëŠ” nextLine ë˜ëŠ” nextInt ë“± ë©”ì„œë“œì˜ ì‚¬ìš©ì´ ìš©ì´í•˜ë‹¤.
+	   Scanner í´ë˜ìŠ¤ë¥¼ ì´ìš©í•˜ì—¬ File ê°ì²´ë¥¼ ì‚¬ìš©í•˜ë©´
+	   Scanner fileInput = new Scanner(new File("input.txt")); 
+	   ìœ„ ì½”ë“œ ì²˜ëŸ¼ í¸ë¦¬í•˜ê²Œ ì½”ë“œë¥¼ ì‘ì„±í•  ìˆ˜ ìˆë‹¤. 
+	   But ì˜ˆì™¸ì²˜ë¦¬ë¬¸ í•„ìš” (FileNotFoundException ì²˜ë¦¬í•„ìš”)
 	*/
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Scanner input = new Scanner(System.in);  // ½ºÄ³³Ê Å¬·¡½º ¼±¾ğ
-		System.out.println("ÆÄÀÏ ÀÌ¸§Àº?");  //¸ğµç ÆÄÀÏ Çü½ÄÀ¸·Î ¸¸µé¾îÁö±â¿¡ .txt¸¦ ºÙ¿©ÁØ´Ù¸é ¸Ş¸ğÀåÀ¸·Î ¸¸µé¾îÁø´Ù.
+		Scanner input = new Scanner(System.in);  // ìŠ¤ìºë„ˆ í´ë˜ìŠ¤ ì„ ì–¸
+		System.out.println("íŒŒì¼ ì´ë¦„ì€?");  //ëª¨ë“  íŒŒì¼ í˜•ì‹ìœ¼ë¡œ ë§Œë“¤ì–´ì§€ê¸°ì— .txtë¥¼ ë¶™ì—¬ì¤€ë‹¤ë©´ ë©”ëª¨ì¥ìœ¼ë¡œ ë§Œë“¤ì–´ì§„ë‹¤.
 		
-		String filename =input.nextLine().trim();  // trimÀÇ ¶æÀº ºóÄ­ Áö¿ì±â
+		String filename =input.nextLine().trim();  // trimì˜ ëœ»ì€ ë¹ˆì¹¸ ì§€ìš°ê¸°
 		
 		PrintWriter outWriter = null;
 		
-		// ¿¹¿Ü Ã³¸®¹®
+		// ì˜ˆì™¸ ì²˜ë¦¬ë¬¸
 		try {
-			outWriter = new PrintWriter(filename);  // ÀÔ·Â¹ŞÀº ÀÌ¸§ÀÇ ÆÄÀÏ »ı¼º
+			outWriter = new PrintWriter(filename);  // ì…ë ¥ë°›ì€ ì´ë¦„ì˜ íŒŒì¼ ìƒì„±
 			
-		} catch(FileNotFoundException e){  // ¸¸¾à ÆÄÀÏÀ» ¿­Áö ¸øÇß´Ù¸é
-			System.out.println(filename + "¸¦ ¿­Áö ¸øÇß½À´Ï´Ù.");
+		} catch(FileNotFoundException e){  // ë§Œì•½ íŒŒì¼ì„ ì—´ì§€ ëª»í–ˆë‹¤ë©´
+			System.out.println(filename + "ë¥¼ ì—´ì§€ ëª»í–ˆìŠµë‹ˆë‹¤.");
 			System.exit(0);
 		}
 		
-		System.out.println("ÅØ½ºÆ®¸¦ ÀÔ·ÂÇÏ¼¼¿ä(³¡³¾ ¶§´Â ÀÔ·Â¾øÀÌ enterÅ° ÀÔ·Â)");
+		System.out.println("í…ìŠ¤íŠ¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”(ëë‚¼ ë•ŒëŠ” ì…ë ¥ì—†ì´ enterí‚¤ ì…ë ¥)");
 		String line = input.nextLine();
-		while(line.length() > 0) {  // ¸¸¾à text¸¦ ÀÔ·ÂÇÏ°í ÀÖ´Ù¸é
+		while(line.length() > 0) {  // ë§Œì•½ textë¥¼ ì…ë ¥í•˜ê³  ìˆë‹¤ë©´
 			outWriter.println(line); 
 			line = input.nextLine();  
 		}
 		
-		outWriter.close();  // ¿­¸° ÆÄÀÏ ´İ±â
-		System.out.println(filename + "ÆÄÀÏÀÌ »ı¼ºµÇ¾ú½À´Ï´Ù.");
+		outWriter.close();  // ì—´ë¦° íŒŒì¼ ë‹«ê¸°
+		System.out.println(filename + "íŒŒì¼ì´ ìƒì„±ë˜ì—ˆìŠµë‹ˆë‹¤.");
 	}
 
 }
