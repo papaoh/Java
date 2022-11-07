@@ -3,31 +3,31 @@ package ch08;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-
+// ë§Œë“¤ì–´ì§„ íŒŒì¼ì˜ ë°ì´í„° ì½ê¸°
 public class FileScanner {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Scanner input = new Scanner(System.in);  // ½ºÄ³³Ê Å¬·¡½º ¼±¾ğ
-		System.out.println("ÆÄÀÏ ÀÌ¸§Àº? ");
+		Scanner input = new Scanner(System.in);  // ìŠ¤ìºë„ˆ í´ë˜ìŠ¤ ì„ ì–¸
+		System.out.println("íŒŒì¼ ì´ë¦„ì€? ");
 		
-		// ÆÄÀÏÀÇ ÀÌ¸§À» ÀúÀåÇÒ °´Ã¼º¯¼ö ¼±¾ğ
-		String filename = input.nextLine().trim();  // ÆÄÀÏÀÇ ÀÌ¸§À» ÀÔ·Â¹Ş±â
+		// íŒŒì¼ì˜ ì´ë¦„ì„ ì €ì¥í•  ê°ì²´ë³€ìˆ˜ ì„ ì–¸
+		String filename = input.nextLine().trim();  // íŒŒì¼ì˜ ì´ë¦„ì„ ì…ë ¥ë°›ê¸°
 		Scanner fileInput = null;
 		
-		// ¿¹¿ÜÃ³¸®¹®
+		// ì˜ˆì™¸ì²˜ë¦¬ë¬¸
 		try {
-			fileInput = new Scanner(new File(filename));  // ÀÔ·Â¹ŞÀº ÆÄÀÏÀÌ¸§¿¡ ¾Ë¸Â´Â ÆÄÀÏ ¿­±â
+			fileInput = new Scanner(new File(filename));  // ì…ë ¥ë°›ì€ íŒŒì¼ì´ë¦„ì— ì•Œë§ëŠ” íŒŒì¼ ì—´ê¸°
 			
-		} catch(FileNotFoundException e){  // ¸¸¾à ÆÄÀÏÀ» Ã£Áö ¸øÇß´Ù¸é 
-			System.out.println(filename + " ÆÄÀÏÀ» ¿­Áö ¸øÇß½À´Ï´Ù.");
+		} catch(FileNotFoundException e){  // ë§Œì•½ íŒŒì¼ì„ ì°¾ì§€ ëª»í–ˆë‹¤ë©´ 
+			System.out.println(filename + " íŒŒì¼ì„ ì—´ì§€ ëª»í–ˆìŠµë‹ˆë‹¤.");
 			System.exit(0);
 		}
-		while(fileInput.hasNext()) {  // ÆÄÀÏ¾È¿¡ µ¥ÀÌÅÍ¸¦ ÀĞ±â
+		while(fileInput.hasNext()) {  // íŒŒì¼ì•ˆì— ë°ì´í„°ë¥¼ ì½ê¸°
 			System.out.println(fileInput.nextLine());
 		}
-		fileInput.close();  // ¿­¾îµĞ ÆÄÀÏ ´İ¾ÆÁÖ±â
+		fileInput.close();  // ì—´ì–´ë‘” íŒŒì¼ ë‹«ì•„ì£¼ê¸°
 	}
 
 }
