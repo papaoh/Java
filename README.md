@@ -3,6 +3,7 @@ Java 프로그래밍 수업에서 배운 내용 정리
 
 # File Create 결과화면 (파일 생성 및 파일 읽기)
 - 파일 생성 결과 화면
+
 ![image](https://user-images.githubusercontent.com/116075431/201553917-a13faeb4-972e-4eb5-9946-be9e1c1ff26f.png)
 
 - 실제로 파일이 생성이 되고 데이터 입력이 되었는지 확인
