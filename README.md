@@ -1,4 +1,12 @@
 # Java
+Java 프로그래밍 수업시간에 배운 내용 정리
+
+
+# TimerCount (타이머 카운터 위젯)
+![image](https://user-images.githubusercontent.com/116075431/201552988-b86dd935-10f2-41fd-9b86-1383278caf49.png)
+
+
+
 
 앞으로 공부할 내용
 
