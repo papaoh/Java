@@ -7,6 +7,7 @@ Java 프로그래밍 수업에서 배운 내용 정리
 ![image](https://user-images.githubusercontent.com/116075431/201553917-a13faeb4-972e-4eb5-9946-be9e1c1ff26f.png)
 
 - 실제로 파일이 생성이 되고 데이터 입력이 되었는지 확인
+
 ![image](https://user-images.githubusercontent.com/116075431/201553965-20b938c0-a56a-41a5-8b5b-94f8fe680815.png)
 
 - 생성된 파일의 내용을 읽어와서 출력하는 FileRead
@@ -17,6 +18,7 @@ Java 프로그래밍 수업에서 배운 내용 정리
 
 # TimerCount 결과화면 (타이머 카운터 위젯)
 - 20초를 넣고 타이머되는 결과화면
+
 ![image](https://user-images.githubusercontent.com/116075431/201552988-b86dd935-10f2-41fd-9b86-1383278caf49.png)
 
 
