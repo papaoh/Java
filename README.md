@@ -1,4 +1,4 @@
-# Java
+# Java Programming
 Java 프로그래밍 수업에서 배운 내용 정리
 
 # File Create 결과화면 (파일 생성 및 파일 읽기)
