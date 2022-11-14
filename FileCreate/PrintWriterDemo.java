@@ -26,7 +26,7 @@ public class PrintWriterDemo {
 		
 		// 예외 처리문
 		try {
-			outWriter = new PrintWriter(filename);  // 입력받은 이름의 파일 생성
+			outWriter = new PrintWriter(filename + ".txt");  // 입력받은 이름의 파일 생성
 			
 		} catch(FileNotFoundException e){  // 만약 파일을 열지 못했다면
 			System.out.println(filename + "를 열지 못했습니다.");
