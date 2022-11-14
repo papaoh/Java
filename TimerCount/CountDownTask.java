@@ -3,19 +3,19 @@ package ch08;
 import javax.swing.JLabel;
 
 public class CountDownTask implements Runnable{
-	// Ä«¿îÆ® ´Ù¿î ±¸Çö Å¬·¡½º
+	// ì¹´ìš´íŠ¸ ë‹¤ìš´ êµ¬í˜„ í´ë˜ìŠ¤ 
 	
-	// ÇÊµå
+	// í•„ë“œ
 	private int count;
 	private JLabel label;
 	
-	// »ı¼ºÀÚ
+	// ìƒì„±ì
 	CountDownTask(int count, JLabel label){
 		this.count = count;
 		this.label = label;
 	}
 	
-	// ¸Ş¼­µå
+	// ë©”ì„œë“œ
 	@Override
 	public void run() {
 		label.setText(count+"");
