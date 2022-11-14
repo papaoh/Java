@@ -9,6 +9,7 @@ Java 프로그래밍 수업에서 배운 내용 정리
 ![image](https://user-images.githubusercontent.com/116075431/201553965-20b938c0-a56a-41a5-8b5b-94f8fe680815.png)
 
 - 생성된 파일의 내용을 읽어와서 출력하는 FileRead
+
 ![image](https://user-images.githubusercontent.com/116075431/201554199-e5d318bc-ab1f-43b5-ac49-b410c265e369.png)
 
 
@@ -19,9 +20,9 @@ Java 프로그래밍 수업에서 배운 내용 정리
 
 
 .
+
 .
-.
-.
+
 .
 
 
