@@ -11,30 +11,30 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-/* Á¤¼ö¸¦ ÀÔ·Â¹Ş¾Æ Ä«¿îÆ® ÇÏ´Â ÇÁ·Î±×·¥ ÀÛ¼º
- * - ÁøÇàµÇ´Â µµÁß¿¡ "ÁßÁö" ¹öÆ°À» ´©¸£¸é Ä«¿îÆ® ´Ù¿îÀÌ ÁßÁöµÇ°í È­¸éÀÌ ´Ù½Ã 0À¸·Î ÃÊ±âÈ­ µÈ´Ù.
- * - È­¸é UI´Â ¸ŞÀÎ Thread°¡ ´ã´ç
- * - Ä«¿îÆ® ´Ù¿î ÀÛ¾÷Àº ´Ù¸¥ Thread°¡ ´ã´ç
+/* ì •ìˆ˜ë¥¼ ì…ë ¥ë°›ì•„ ì¹´ìš´íŠ¸ í•˜ëŠ” í”„ë¡œê·¸ë¨ ì‘ì„±
+ * - ì§„í–‰ë˜ëŠ” ë„ì¤‘ì— "ì¤‘ì§€" ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ ì¹´ìš´íŠ¸ ë‹¤ìš´ì´ ì¤‘ì§€ë˜ê³  í™”ë©´ì´ ë‹¤ì‹œ 0ìœ¼ë¡œ ì´ˆê¸°í™” ëœë‹¤.
+ * - í™”ë©´ UIëŠ” ë©”ì¸ Threadê°€ ë‹´ë‹¹
+ * - ì¹´ìš´íŠ¸ ë‹¤ìš´ ì‘ì—…ì€ ë‹¤ë¥¸ Threadê°€ ë‹´ë‹¹ (ë‹¤ë¥¸ java ì†ŒìŠ¤íŒŒì¼)
  */
 
 public class CountDownFrame extends JFrame implements ActionListener{
-	// ÇÊµå
+	// í•„ë“œ
 	private JTextField input;
 	JButton btnStart;
 	JButton btnStop;
 	JLabel outLabel;
 	Thread thread;
 	
-	// »ı¼ºÀÚ
+	// ìƒì„±ì
 	public CountDownFrame() {
-		setSize(250, 200);  // Å©±â ÁöÁ¤(°¡·Î, ¼¼·Î)
+		setSize(250, 200);  // í¬ê¸° ì§€ì •(ê°€ë¡œ, ì„¸ë¡œ)
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setTitle("CountDown Frame");  // Á¦¸ñ
+		setTitle("CountDown Frame");  // ì œëª©
 		input = new JTextField(8);
-		btnStart = new JButton("½ÃÀÛ");
-		btnStop = new JButton("ÁßÁö");
+		btnStart = new JButton("ì‹œì‘");
+		btnStop = new JButton("ì¤‘ì§€");
 		outLabel = new JLabel();
-		outLabel.setFont(new Font("Serif", Font.BOLD, 100));  // ÆùÆ®¿Í text ÁöÁ¤
+		outLabel.setFont(new Font("Serif", Font.BOLD, 100));  // í°íŠ¸ì™€ text ì§€ì •
 		btnStart.addActionListener(this);
 		btnStop.addActionListener(this);
 		setLayout(new FlowLayout());
@@ -44,7 +44,7 @@ public class CountDownFrame extends JFrame implements ActionListener{
 		add(outLabel);
 	}
 	
-	// ¸Ş¼­µå
+	// ë©”ì„œë“œ
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
@@ -55,7 +55,7 @@ public class CountDownFrame extends JFrame implements ActionListener{
 		} else if(e.getSource() == btnStop) {
 			if(thread != null && thread.isAlive()) {
 				input.setText("");
-				thread.interrupt();  // ÁßÁö
+				thread.interrupt();  // ì¤‘ì§€
 			}
 		}
 	}
