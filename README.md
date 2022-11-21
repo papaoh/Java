@@ -23,6 +23,23 @@ Java 프로그래밍 수업에서 배운 내용 정리
 ![image](https://user-images.githubusercontent.com/116075431/201552988-b86dd935-10f2-41fd-9b86-1383278caf49.png)
 
 
+# DB Connect Test
+- 접근 권한 및 테이블
+User = mouse, Password = 1234
+Id = Not null, auto_increment
+name = varchar(30)
+dept = varchar(30)
+
+- Mysql DB Table
+
+![image](https://user-images.githubusercontent.com/116075431/202949745-41b01eee-fadd-457f-9c99-58a6e7cb60e3.png)
+
+
+- 기존 DB에 연동하여 데이터를 읽어오기
+
+![image](https://user-images.githubusercontent.com/116075431/202949452-a6b7b845-0cf8-40e1-865e-6f4c5ab41004.png)
+
+
 .
 
 .
