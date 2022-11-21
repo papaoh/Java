@@ -25,6 +25,7 @@ Java 프로그래밍 수업에서 배운 내용 정리
 
 # DB Connect Test
 - Client & Server & DB
+1. Request,  2. Server에서 Request 수행, 3.Response
 ![image](https://user-images.githubusercontent.com/116075431/202953035-33d03989-97ba-4972-a19f-b6dba2580774.png)
 
 - Mysql DB Table
