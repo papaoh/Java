@@ -7,8 +7,12 @@ import java.sql.SQLException;
 import java.sql.SQLPermission;
 import java.sql.Statement;
 
-/* DB ¿¬µ¿ Å×½ºÆ®(MySQL)
+/* DB ì—°ë™ í…ŒìŠ¤íŠ¸(MySQL)
  * 
+ * DB ì´ë¦„: db22
+ * user: mouse,  password: 1234
+ * Table ì´ë¦„: ms
+ * Table ì¹¼ëŸ¼: id(not null, auto_increment), name(varchar 30), dept(varchar 30)
  */
 
 public class DBcon {
@@ -16,26 +20,26 @@ public class DBcon {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		// DB¿¬µ¿ ½Ã ¿¹¿ÜÃ³¸®¹®
+		// DBì—°ë™ ì‹œ ì˜ˆì™¸ì²˜ë¦¬ë¬¸
 		try {
-			Class.forName("com.mysql.jdbc.Driver");  // Java¿¡¼­ µ¥ÀÌÅÍº£ÀÌ½º µå¶óÀÌ¹ö ¼³Á¤
-			System.out.println("¿¬°á ¿Ï·á");
+			Class.forName("com.mysql.jdbc.Driver");  // Javaì—ì„œ ë°ì´í„°ë² ì´ìŠ¤ ë“œë¼ì´ë²„ ì„¤ì •
+			System.out.println("ì—°ê²° ì™„ë£Œ");
 			
 		} catch(ClassNotFoundException e1) {
-			System.out.println("µå¶óÀÌ¹ö ¿¬°á ½ÇÆĞ");
-		    System.exit(0);  // ½Ã½ºÅÛ Á¾·á
+			System.out.println("ë“œë¼ì´ë²„ ì—°ê²° ì‹¤íŒ¨");
+		    System.exit(0);  // ì‹œìŠ¤í…œ ì¢…ë£Œ
 		}
 		
-		String url = "jdbc:mysql://localhost:3306/db22";  // db°æ·Î
-		String username = "mouse";  // »ç¿ëÀÚ
-		String password = "1234";  // ºñ¹Ğ¹øÈ£
+		String url = "jdbc:mysql://localhost:3306/db22";  // dbê²½ë¡œ
+		String username = "mouse";  // ì‚¬ìš©ì
+		String password = "1234";  // ë¹„ë°€ë²ˆí˜¸
 		Connection connection = null; 
 		
-		System.out.println("Mysql DB db22 ¿¬°á½ÃµµÁß ....");
-		try {  // DB ¿¬°á
+		System.out.println("Mysql DB db22 ì—°ê²°ì‹œë„ì¤‘ ....");
+		try {  // DB ì—°ê²°
 			connection = DriverManager.getConnection(url, username, password);  
 			System.out.println("DB Connection Complete");
-		} catch(SQLException e) {  // DB¿¬µ¿ ½ÇÆĞ½Ã
+		} catch(SQLException e) {  // DBì—°ë™ ì‹¤íŒ¨ì‹œ
 			System.out.println("DB Connection Fail");
 		}
 		
@@ -43,22 +47,22 @@ public class DBcon {
 		
 		Statement pa1;
 		try {
-			pa1 = connection.createStatement();  // Äõ¸®¹® »ı¼º
-			ResultSet pa2 = pa1.executeQuery(sql);  // Äõ¸®¹® ½ÇÇàÇÑ °á°ú °ª ÀúÀå
-			while(pa2.next()) {  // °¡Á®¿Â µ¥ÀÌÅÍ°¡ ³¡ÀÌ ³¯ ¶§ ±îÁö ¹İº¹
-				System.out.println(pa2.getInt(1) + ". ÀÌ¸§ = " + pa2.getString(2) + ", ÇĞ°ú = " + pa2.getString(3));
+			pa1 = connection.createStatement();  // ì¿¼ë¦¬ë¬¸ ìƒì„±
+			ResultSet pa2 = pa1.executeQuery(sql);  // ì¿¼ë¦¬ë¬¸ ì‹¤í–‰í•œ ê²°ê³¼ ê°’ ì €ì¥
+			while(pa2.next()) {  // ê°€ì ¸ì˜¨ ë°ì´í„°ê°€ ëì´ ë‚  ë•Œ ê¹Œì§€ ë°˜ë³µ
+				System.out.println(pa2.getInt(1) + ". ì´ë¦„ = " + pa2.getString(2) + ", í•™ê³¼ = " + pa2.getString(3));
 			}
-			pa2.close();  // ½ÇÇà ÈÄ Á¾·á
-			pa1.close();  // ½ÇÇà ÈÄ Á¾·á
+			pa2.close();  // ì‹¤í–‰ í›„ ì¢…ë£Œ
+			pa1.close();  // ì‹¤í–‰ í›„ ì¢…ë£Œ
 			
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
 			System.out.println("connection Closing");
-			if(connection != null) { // ¸¸¾à ¾ÆÁ÷ ¿¬°áµÇ¾î ÀÖ´Ù¸é
-				try {  // °­Á¦·Î ¿¬°á Á¾·áÇÏ±â
+			if(connection != null) { // ë§Œì•½ ì•„ì§ ì—°ê²°ë˜ì–´ ìˆë‹¤ë©´
+				try {  // ê°•ì œë¡œ ì—°ê²° ì¢…ë£Œí•˜ê¸°
 					connection.close();  
-				} catch(SQLException e){  // °­Á¦·Î ¿¬°á Á¾·á°¡ µÇ¾îÁöÁö ¾Ê´Â´Ù¸é
+				} catch(SQLException e){  // ê°•ì œë¡œ ì—°ê²° ì¢…ë£Œê°€ ë˜ì–´ì§€ì§€ ì•ŠëŠ”ë‹¤ë©´
 					e.printStackTrace();
 				}
 			}
