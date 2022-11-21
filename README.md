@@ -24,11 +24,8 @@ Java 프로그래밍 수업에서 배운 내용 정리
 
 
 # DB Connect Test
-- 접근 권한 및 테이블
-1. User = mouse, Password = 1234
-2. Id = Not null, auto_increment
-3. name = varchar(30)
-4. dept = varchar(30)
+- Client & Server & DB
+![image](https://user-images.githubusercontent.com/116075431/202953035-33d03989-97ba-4972-a19f-b6dba2580774.png)
 
 - Mysql DB Table
 
